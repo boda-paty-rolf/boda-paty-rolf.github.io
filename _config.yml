@@ -1,11 +1,11 @@
 # Site settings
 title:
-email:
+email: bodarolfypaty@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "boda-paty-rolf.github.io/" # the base hostname & protocol for your site
 
-github_username: boda-paty-rolf
+whatsapp: 0123456
 
 # Build settings
 markdown: kramdown

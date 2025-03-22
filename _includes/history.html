@@ -1,0 +1,196 @@
+<section id="history" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Nuestra historia</h2>
+                <hr class="primary">
+                <p class="subheading">Cómo nos encontramos</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Main Story Content -->
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="story-container">
+                    <div class="story-heart"><i class="fa fa-heart"></i></div>
+                    
+                    <div class="story-content">
+                        <p class="lead text-center">En medio de la pandemia, Paty empacó sus maletas. "¡Mamá, Papá, me voy a hacer una maestría a Austria!"</p>
+                        
+                        <div class="story-image-wrapper">
+                            <img src="/img/history/1.jpg" alt="Paty goes" class="img-responsive story-image">
+                            <div class="image-caption">Paty starts a journey</div>
+                        </div>
+
+                        <h3 class="story-chapter">En un lugar lejano llamado Rosenheim</h3>
+                        <p>Mientras tanto, Rolf, quien ya hacía home office antes de que empezara la pandemia... "¡Qué bien! Ahora todos tienen más tiempo libre y voy a poder jugar más volleyball."</p>
+
+                        <div class="row timeline-moments">
+                            <div class="col-md-4 moment-item">
+                                <div class="moment-date">Febrero 2020</div>
+                                <div class="moment-title">En México, se hacen patentes los primeros efectos de la inminente pandemia</div>
+                            </div>
+                            <div class="col-md-4 moment-item">
+                                <div class="moment-date">Marzo 2020</div>
+                                <div class="moment-title">Se han cerrado casi todos los comercios, empresas y escuelas de Alemania para contener el coronavirus</div>
+                                <p class="text-muted">How does it look do we need it?</p>
+                            </div>
+                            <div class="col-md-4 moment-item">
+                                <div class="moment-date">Augusto 2020</div>
+                                <div class="moment-title">Paty se va a Austria</div>
+                            </div>
+                        </div>
+
+                        <h3 class="story-chapter">La primera cita</h3>
+                        <p>On a [adjective] evening in [Month/Year], [Partner1] completely surprised me at [Location]. 
+                        I thought we were just [normal activity], but then [description of proposal details]. 
+                        There were [specific memorable elements], and of course I said "Yes!" through happy tears.</p>
+
+                        <blockquote class="story-quote">
+                            "{{ site.romantic_quote }}" 
+                            <footer>- [Partner1] to [Partner2], [Date]</footer>
+                        </blockquote>
+
+                        <div class="text-center">
+                            <img src="/img/history/see.jpg" alt="The first date" class="img-responsive story-image">
+                        </div>
+
+                        <p>Después de buscar mil maneras para verse a pesar del cierre de fronteras entre Alemania y Austria, encontramos que Hechtsee era el mejor lugar. Un lago que queda justo en la frontera. Ahí nos íbamos a platicar, caminar y dar vueltas.
+
+                            ¿Él? Técnico, calculador, específico, alemán.
+                            ¿Yo? Creativa, soñadora y muy habladora... mexicana.
+                            
+                            Y aunque dicen que los opuestos se atraen, ellos descubrieron que lo más importante es lo que una pareja comprarte: la vida diaria, los sueños compartidos y los valores personales.
+                            
+                            Rolf le da a Paty paz, seguridad, cariño y mucha felicidad.
+                            Paty le da a Rolf color, emociones, luz y también un poco de necesaria locura.
+                            
+                            Después de cinco años, no pueden esperar para dar los siguientes pasos: casarse, formar su propia familia y emprender nuevas aventuras juntos. Pero no pudiéran imaginarse haciendo eso sin sus seres queridos.
+                            
+                            Por eso, quisieran invitarte cordialmente a su boda, que para ellos es la unión de dos mundos. Un momento para crear puentes intercontinentales y hacerles saber a todos que tienen familia del otro lado del mar.
+                            
+                            Esperamos puedas acompañarnos. ¡Nos encantaría contar con tu presencia!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+#our-story {
+    position: relative;
+    overflow: hidden;
+}
+
+.story-container {
+    position: relative;
+    padding: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+}
+
+.story-heart {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.story-heart i {
+    font-size: 40px;
+    color: #e74c3c;
+}
+
+.story-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+.story-image {
+    border-radius: 8px;
+    margin: 30px 0;
+    max-width: 100%;
+}
+
+.image-caption {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+    margin-top: 10px;
+}
+
+.story-chapter {
+    margin: 40px 0 20px;
+    color: #2c3e50;
+    position: relative;
+    padding-left: 30px;
+}
+
+.story-chapter::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    height: 3px;
+    width: 20px;
+    background: #e74c3c;
+}
+
+.timeline-moments {
+    margin: 30px 0;
+}
+
+.moment-item {
+    text-align: center;
+    padding: 20px;
+    border-right: 1px solid #eee;
+}
+
+.moment-item:last-child {
+    border-right: none;
+}
+
+.moment-date {
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 8px;
+}
+
+.moment-title {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.story-quote {
+    border-left: 3px solid #e74c3c;
+    margin: 30px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    font-style: italic;
+}
+
+.story-quote footer {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .story-container {
+        padding: 20px;
+    }
+    
+    .moment-item {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+    }
+}
+</style>
