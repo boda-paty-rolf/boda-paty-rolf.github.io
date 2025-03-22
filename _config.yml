@@ -6,6 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "boda-paty-rolf.github.io/" # the base hostname & protocol for your site
 
 whatsapp: 0123456
+romantic_quote: thats the part with the site ref
 
 # Build settings
 markdown: kramdown
