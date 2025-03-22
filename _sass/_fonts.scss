@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'parisian';
+    src: url('/assets/fonts/parisian.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Apply the font
+body {
+    font-family: 'parisian', sans-serif;
+}
