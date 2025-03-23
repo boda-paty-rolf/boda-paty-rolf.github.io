@@ -1,197 +1,661 @@
-html,
-body {
-    height: 100%;
-    width: 100%;
+// Color palette variables
+$blue-dark: #1d5e84;
+$blue-medium: #87bddf;
+$blue-light: #b4d8ee;
+$orange-dark: #f1731e;
+$orange-medium: #f6943b;
+$orange-light: #febf58;
+
+// Theme variables
+$theme-primary: $orange-medium;
+$theme-secondary: $blue-medium;
+$theme-dark: $blue-dark;
+$theme-light: $blue-light;
+$light-text: rgba(white, 0.8);
+
+// Font mixins
+@font-face {
+  font-family: 'Parisian';
+  src: url('../fonts/parisian.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin parisian {
+  font-family: 'Parisian', 'Helvetica Neue', Arial, sans-serif;
+}
+
+// Transition mixin
+@mixin transition-all {
+  transition: all 0.35s;
+}
+
+// Button variant mixin
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  @include transition-all;
+
+  &:hover,
+  &:focus {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 10%);
+  }
+}
+
+// Global styles
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
 body {
-    @include parisian;
+  @include parisian;
+  -webkit-tap-highlight-color: $theme-dark;
+  color: $theme-dark;
+  background-color: #f6f6f6;
 }
 
-hr {
-    border-color: $theme-primary;
-    border-width: 3px;
-    max-width: 50px;
+// Typography
+h1, h2, h3, h4, h5, h6, .btn, .navbar-brand {
+  @include parisian;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-hr.light {
-    border-color: white;
-}
-
-a {
-    @include transition-all;
-    color: $theme-primary;
-    &:hover,
-    &:focus {
-        color: darken($theme-primary, 10%);
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    @include parisian;
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: $theme-dark;
 }
 
 p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
-.bg-primary {
-    background-color: $theme-primary;
-}
+// Utility classes
+.bg-primary { background-color: $theme-primary; color: white; }
+.bg-secondary { background-color: $theme-secondary; color: white; }
+.bg-dark { background-color: $theme-dark; color: white; }
+.bg-light { background-color: $theme-light; color: $theme-dark; }
+.text-faded { color: $light-text; }
+.text-primary { color: $theme-primary; }
+.text-secondary { color: $theme-secondary; }
+.text-dark { color: $theme-dark; }
+.text-light { color: $theme-light; }
+.no-padding { padding: 0; }
+.no-gutter > [class*='col-'] { padding-right: 0; padding-left: 0; }
 
-.bg-dark {
-    background-color: $theme-dark;
-    color: white;
-}
-
-.text-faded {
-    color: rgba(white, .7);
-}
-
+// Sections
 section {
-    padding: 100px 0;
+  padding: 80px 0;
+  
+  &:nth-child(odd) {
+    background-color: white;
+  }
+  
+  &:nth-child(even) {
+    background-color: #f6f6f6;
+  }
 }
 
-aside {
-    padding: 50px 0;
+// Card styling (unified for all card-like elements)
+.card-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  margin: 20px 0;
+  border-top: 3px solid $theme-primary;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
 }
 
-.no-padding {
-    padding: 0;
+// Horizontal rule
+hr {
+  border-color: $theme-primary;
+  border-width: 3px;
+  max-width: 50px;
+  margin: 20px auto;
+  
+  &.light {
+    border-color: white;
+  }
+}
+
+// Buttons
+.btn {
+  @include transition-all;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  
+  &.btn-xl {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+}
+
+.btn-primary {
+  @include button-variant(white, $theme-primary, $theme-primary);
+}
+
+.btn-secondary {
+  @include button-variant(white, $theme-secondary, $theme-secondary);
+}
+
+.btn-default {
+  @include button-variant($theme-dark, white, white);
 }
 
 // Navigation
 .navbar-default {
-    background-color: white;
-    border-color: rgba($theme-dark, .5);
-    @include parisian;
-    @include transition-all;
-    .navbar-header .navbar-brand {
-        color: $theme-primary;
-        @include parisian;
-        font-weight: 700;
-        text-transform: uppercase;
-        &:hover,
-        &:focus {
-            color: darken($theme-primary, 10%);
-        }
-    }
-    .nav {
-        > li {
-            > a,
-            > a:focus {
-                text-transform: uppercase;
-                font-weight: 700;
-                font-size: 13px;
-                color: $theme-dark;
-                &:hover {
-                    color: $theme-primary;
-                }
-            }
-            &.active {
-                > a,
-                > a:focus {
-                    color: $theme-primary !important;
-                    background-color: transparent;
-                    &:hover {
-                        background-color: transparent;
-                    }
-                }
-            }
-        }
-    }
-    @media (min-width: 768px) {
-        background-color: transparent;
-        border-color: rgba(white, .3);
-        .navbar-header .navbar-brand {
-            color: rgba(white, .7);
-            &:hover,
-            &:focus {
-                color: white;
-            }
-        }
-        .nav > li > a,
-        .nav > li > a:focus {
-            color: rgba(white, .7);
-            &:hover {
-                color: white;
-            }
-        }
-        &.affix {
-            background-color: white;
-            border-color: rgba($theme-dark, .5);
-            .navbar-header .navbar-brand {
-                color: $theme-primary;
-                font-size: 14px;
-                &:hover,
-                &:focus {
-                    color: darken($theme-primary, 10%);
-                }
-            }
-            .nav > li > a,
-            .nav > li > a:focus {
-                color: $theme-dark;
-                &:hover {
-                    color: $theme-primary;
-                }
-            }
-        }
-    }
-}
-
-// Sections
-
-.section-heading {
-    margin-top: 0;
-}
-
-
-// Bootstrap Overrides
-.text-primary {
+  background-color: white;
+  border-color: rgba($theme-dark, 0.1);
+  @include parisian;
+  @include transition-all;
+  
+  .navbar-brand {
     color: $theme-primary;
-}
-
-.no-gutter > [class*='col-'] {
-    padding-right:0;
-    padding-left:0;
-}
-
-// Button Styles
-.btn-default {
-    @include button-variant($theme-dark, white, white);
-}
-
-.btn-primary {
-    @include button-variant(white, $theme-primary, $theme-primary);
-}
-
-.btn {
-    @include parisian;
-    border: none;
-    border-radius: 300px;
+    &:hover, &:focus {
+      color: darken($theme-primary, 10%);
+    }
+  }
+  
+  .nav > li > a {
     font-weight: 700;
-    text-transform: uppercase;
+    font-size: 13px;
+    color: $theme-dark;
+    &:hover {
+      color: $theme-primary;
+    }
+  }
 }
 
-.btn-xl {
-    padding: 15px 30px;
+@media (min-width: 768px) {
+  .navbar-default {
+    background-color: transparent;
+    border-color: rgba(white, 0.3);
+    
+    .navbar-brand {
+      color: $light-text;
+      &:hover, &:focus {
+        color: white;
+      }
+    }
+    
+    .nav > li > a {
+      color: $light-text;
+      &:hover {
+        color: white;
+      }
+    }
+    
+    &.affix {
+      background-color: white;
+      border-color: rgba($theme-dark, 0.1);
+      
+      .navbar-brand {
+        color: $theme-primary;
+      }
+      
+      .nav > li > a {
+        color: $theme-dark;
+        
+        &:hover {
+          color: $theme-primary;
+        }
+      }
+    }
+  }
 }
 
-::selection {
-    color: white;
-    text-shadow: none;
-    background: $theme-dark;
+// Header
+header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url('../img/header.jpg') center/cover no-repeat fixed;
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .header-content {
+    max-width: 700px;
+    text-align: center;
+    
+    h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+    
+    p {
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+  }
 }
 
-
-body {
-    -webkit-tap-highlight-color: $theme-dark;
+@media (max-width: 767px) {
+  header {
+    background-attachment: scroll;
+    
+    .header-content h1 {
+      font-size: 36px;
+    }
+  }
 }
 
+// Story Section
+.story-container {
+  @extend .card-container;
+  position: relative;
+  overflow: hidden;
+  
+  .story-heart {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    background-color: $theme-primary;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
+    
+    i {
+      color: white;
+      font-size: 24px;
+      transform: rotate(-45deg);
+    }
+  }
+  
+  .story-chapter {
+    color: $theme-primary;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .story-image {
+    border-radius: 4px;
+    margin: 20px 0;
+    
+    &-wrapper {
+      position: relative;
+      margin: 30px 0;
+      
+      .image-caption {
+        background-color: rgba($theme-dark, 0.8);
+        color: white;
+        padding: 10px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+  
+  .timeline-moments {
+    margin: 30px 0;
+    
+    .moment-item {
+      text-align: center;
+      padding: 15px;
+      
+      .moment-date {
+        font-weight: bold;
+        color: $theme-primary;
+      }
+      
+      .moment-title {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+// FAQ Section
+.faq-accordion {
+  .faq-item {
+    @extend .card-container;
+    
+    .faq-header {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      
+      i {
+        color: $theme-primary;
+        margin-right: 15px;
+        font-size: 24px;
+      }
+      
+      h3 {
+        margin: 0;
+      }
+    }
+    
+    .faq-body {
+      padding-top: 15px;
+      padding-left: 39px; // icon width + margin
+    }
+  }
+}
+
+// Wedding Timeline
+.wedding-timeline {
+  position: relative;
+  padding: 40px 0;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: $theme-light;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-item {
+    margin-bottom: 50px;
+    
+    .timeline-date {
+      padding: 20px;
+      
+      h4 {
+        margin: 0;
+        color: $theme-dark;
+      }
+      
+      p {
+        color: $theme-primary;
+        font-weight: bold;
+        margin: 5px 0 0;
+      }
+    }
+    
+    .timeline-card {
+      @extend .card-container;
+      position: relative;
+      
+      .timeline-icon {
+        position: absolute;
+        top: -20px;
+        background-color: $theme-primary;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        
+        i {
+          color: white;
+        }
+      }
+      
+      &:after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        transform: rotate(45deg);
+        top: 20px;
+      }
+      
+      h3 {
+        color: $theme-dark;
+        margin-top: 10px;
+      }
+      
+      .time, .location {
+        color: $theme-primary;
+        margin: 5px 0;
+        
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .wedding-timeline {
+    .timeline-item {
+      .timeline-card {
+        .timeline-icon {
+          left: -20px;
+        }
+        
+        &:after {
+          left: -10px;
+        }
+      }
+      
+      &:nth-child(even) {
+        .timeline-card {
+          .timeline-icon {
+            right: -20px;
+            left: auto;
+          }
+          
+          &:after {
+            right: -10px;
+            left: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .wedding-timeline {
+    &::before {
+      left: 20px;
+    }
+    
+    .timeline-item {
+      .timeline-date {
+        text-align: left !important;
+        padding-left: 40px;
+      }
+      
+      .timeline-card {
+        margin-left: 40px;
+        
+        .timeline-icon {
+          left: -20px;
+        }
+        
+        &:after {
+          left: -10px;
+        }
+      }
+    }
+  }
+}
+
+// Recommendations
+#recommendations {
+  .category {
+    margin-bottom: 40px;
+    
+    h3 {
+      color: $theme-dark;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 30px 0;
+      
+      .category-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+    }
+  }
+  
+  .recommendations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  .recommendation {
+    width: calc(50% - 30px);
+    max-width: 400px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .info, .description {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($theme-dark, 0.8);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    &:hover .info,
+    &.show-description .description {
+      opacity: 1;
+    }
+    
+    .description {
+      display: none;
+    }
+    
+    &.show-description .description {
+      display: flex;
+    }
+    
+    .info h4 {
+      color: $orange-light;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #recommendations .recommendation {
+    width: 100%;
+  }
+}
+
+// Wedding Day Timetable
+.timetable-items {
+  @extend .card-container;
+  border: 1px solid $theme-light;
+  background-color: #f6f6f6;
+  max-width: 600px;
+  margin: 0 auto;
+  
+  .timetable-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid $theme-light;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .timetable-time {
+      flex: 1;
+      font-weight: bold;
+      color: $theme-dark;
+      display: flex;
+      align-items: center;
+      
+      i {
+        margin-right: 10px;
+        color: $theme-primary;
+        font-size: 18px;
+      }
+    }
+    
+    .timetable-event {
+      flex: 3;
+      color: $orange-dark;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .timetable-items {
+    .timetable-item {
+      flex-direction: column;
+      text-align: center;
+      padding: 15px;
+      
+      .timetable-time, .timetable-event {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Contact Section
+#contact {
+  .contact-link {
+    display: block;
+    text-align: center;
+    color: $theme-dark;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      
+      i {
+        color: $theme-primary;
+      }
+    }
+    
+    i {
+      transition: color 0.3s ease;
+    }
+  }
+}

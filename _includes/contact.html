@@ -1,28 +1,29 @@
+<!-- Example of refactored Contact section -->
 <section id="contact">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">¿Todavía tiene preguntas?</h2>
-                <hr class="primary">
-                <p>Pongámonos en contacto!</p>
-            </div>
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+          <h2 class="section-heading">¿Todavía tiene preguntas?</h2>
+          <hr>
+          <p>Pongámonos en contacto!</p>
         </div>
-        <div class="row justify-content-center">  <!-- Centered row -->
-            <!-- Email -->
-            <div class="col-lg-3 col-md-4 col-sm-6 text-center mb-4">
-                <a href="mailto:{{ site.email }}" class="contact-link">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p class="mt-2">Escríbenos un correo electrónico</p>
-                </a>
-            </div>
-            
-            <!-- WhatsApp -->
-            <div class="col-lg-3 col-md-4 col-sm-6 text-center mb-4">
-                <a href="https://wa.me/{{ site.whatsapp }}" class="contact-link" target="_blank">
-                    <i class="fa fa-whatsapp fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p class="mt-2">Escríbenos un Whatsapp</p>
-                </a>
-            </div>
+      </div>
+      <div class="row justify-content-center">
+        <!-- Email -->
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center mb-4">
+          <a href="mailto:{{ site.email }}" class="contact-link">
+            <i class="fa fa-envelope-o fa-3x"></i>
+            <p class="mt-2">Escríbenos un correo electrónico</p>
+          </a>
         </div>
+        
+        <!-- WhatsApp -->
+        <div class="col-lg-3 col-md-4 col-sm-6 text-center mb-4">
+          <a href="https://wa.me/{{ site.whatsapp }}" class="contact-link" target="_blank">
+            <i class="fa fa-whatsapp fa-3x"></i>
+            <p class="mt-2">Escríbenos un Whatsapp</p>
+          </a>
+        </div>
+      </div>
     </div>
-</section>
+  </section>

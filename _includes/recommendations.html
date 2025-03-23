@@ -24,170 +24,23 @@
   </script> 
   
   <section id="recommendations">
-    <h2>Recommendations</h2>
-  
-    <div class="category" data-category="flights">
-      <h3><img src="/img/recommendations/icons/flight.png" alt="Flight Icon" class="category-icon"> Flights</h3>
-      <div class="recommendations-grid">
-        <div class="recommendation" data-name="Airline A" data-address="123 Main St" data-description="Great deals and comfortable flights.">
-          <img src="/img/recommendations/flight1.jpg" alt="Airline A">
-        </div>
-        <div class="recommendation" data-name="Airline B" data-address="456 Oak Ave" data-description="Excellent service and direct routes.">
-          <img src="/img/recommendations/flight2.jpg" alt="Airline B">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading">Recommendations</h2>
+          <hr>
         </div>
       </div>
-    </div>
-  
-    <div class="category" data-category="hotels">
-      <h3><img src="/img/recommendations/icons/hotel.png" alt="Hotel Icon" class="category-icon"> Hotels</h3>
-      <div class="recommendations-grid">
-        <div class="recommendation" data-name="Hotel Sunshine" data-address="789 Pine Ln" data-description="Beautiful beachfront hotel.">
-          <img src="/img/recommendations/hotel1.jpg" alt="Hotel Sunshine">
-        </div>
-        <div class="recommendation" data-name="Hotel Breeze" data-address="1011 Elm Rd" data-description="Cozy hotel with a pool.">
-          <img src="/img/recommendations/hotel2.jpg" alt="Hotel Breeze">
-        </div>
-      </div>
-    </div>
-  
-    <div class="category" data-category="activities">
-      <h3><img src="/img/recommendations/icons/activity.png" alt="Activity Icon" class="category-icon"> Activities</h3>
-      <div class="recommendations-grid">
-        <div class="recommendation" data-name="Snorkeling Tour" data-address="Ocean Pier" data-description="Explore the coral reefs!">
-          <img src="/img/recommendations/activity1.jpg" alt="Snorkeling Tour">
-        </div>
-        <div class="recommendation" data-name="Sunset Cruise" data-address="Marina Bay" data-description="Relaxing evening cruise.">
-          <img src="/img/recommendations/activity2.jpg" alt="Sunset Cruise">
-        </div>
-      </div>
-    </div>
-  
-    <div class="category" data-category="sights">
-      <h3><img src="/img/recommendations/icons/sight.png" alt="Sight Icon" class="category-icon"> Sights</h3>
-      <div class="recommendations-grid">
-        <div class="recommendation" data-name="Waterfall Park" data-address="Forest Road" data-description="Beautiful natural waterfalls.">
-          <img src="/img/recommendations/sight1.jpg" alt="Waterfall Park">
-        </div>
-        <div class="recommendation" data-name="Old Town" data-address="City Center" data-description="Historic district with charming streets.">
-          <img src="/img/recommendations/sight2.jpg" alt="Old Town">
-        </div>
-      </div>
-      <div class="recommendations-grid">
-        <div class="recommendation" data-name="Botanical Garden" data-address="Garden Lane" data-description="Exotic plants and flowers.">
-          <img src="/img/recommendations/sight2.jpg" alt="Botanical Garden">
-        </div>
-        <div class="recommendation" data-name="Mountain Viewpoint" data-address="Lookout Road" data-description="Panoramic views of the surrounding landscape.">
-          <img src="/img/recommendations/sight1.jpg" alt="Mountain Viewpoint">
-        </div>
-      </div>
-    </div>
-  
-    <div class="category" data-category="restaurants">
-      <h3><img src="/img/recommendations/icons/restaurant.png" alt="Restaurant Icon" class="category-icon"> Restaurants</h3>
-      <div class="recommendations-grid">
-        <div class="recommendation" data-name="Seafood Grill" data-address="Beachfront Ave" data-description="Fresh seafood with ocean views.">
-          <img src="/img/recommendations/restaurant1.jpg" alt="Seafood Grill">
-        </div>
-        <div class="recommendation" data-name="Italian Bistro" data-address="Downtown St" data-description="Authentic Italian cuisine.">
-          <img src="/img/recommendations/restaurant2.jpg" alt="Italian Bistro">
-        </div>
-      </div>
-    </div>
-  
-  </section>
-  
-  <style>
-   .recommendations-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 900px;
-      margin: 0 auto;
-      gap: 2em;
-      padding: 1em;
-  }
-  
-  .recommendation {
-      width: calc(50% - 2em);
-      max-width: 400px;
-      aspect-ratio: 1 / 1;
-      position: relative;
-      margin-bottom: 1em;
-  }
-  
-  .recommendation img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-  }
-  
-  .recommendation .info,
-  .recommendation .description {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      padding: 1em;
-      text-align: center;
-      border-radius: 8px;
-  }
-  
-  .recommendation:hover .info,
-  .recommendation.show-description .description {
-      opacity: 1;
-  }
-  
-  .recommendation .description {
-      display: none;
-  }
-  
-  .recommendation.show-description .description {
-      display: flex;
-  }
-  
-  .recommendation .info h4 {
-      margin-bottom: 0.5em;
-      color: #febf58;
-  }
-  
-  .category h3 {
-      text-align: center;
-      margin: 1.5em 0 1em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .category-icon {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
-      object-fit: contain;
-  }
-  
-  #recommendations h2 {
-      text-align: center;
-      margin-bottom: 1em;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-      .recommendation {
-          width: 100%;
-      }
       
-      .recommendations-grid {
-          gap: 1em;
-      }
-  }
-  </style>
+      <div class="category" data-category="flights">
+        <h3><img src="/img/recommendations/icons/flight.png" alt="Flight Icon" class="category-icon"> Flights</h3>
+        <div class="recommendations-grid">
+          <div class="recommendation" data-name="Airline A" data-address="123 Main St" data-description="Great deals and comfortable flights.">
+            <img src="/img/recommendations/flight1.jpg" alt="Airline A">
+          </div>
+          <!-- Additional recommendations -->
+        </div>
+      </div>
+      <!-- Additional categories -->
+    </div>
+  </section>
