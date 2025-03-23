@@ -8,3 +8,51 @@
         </div>
     </div>
 </header>
+
+<style>
+header {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Full screen height */
+    background-image: url('../img/header.jpg');
+    background-size: cover;  /* Scales image while keeping aspect ratio */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Enables parallax effect */
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content {
+    text-align: center;
+    padding: 50px 15px;
+    width: 100%;
+}
+
+.header-content-inner h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.header-content-inner hr {
+    margin: 30px auto;
+}
+
+.header-content-inner p {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+    header {
+        background-attachment: scroll; /* Disables parallax on mobile for better performance */
+    }
+}
+</style>
