@@ -1,12 +1,125 @@
+<section id="recommendations-{{ lang }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">{{ site.data[lang].recommendations_title }}</h2>
+        <hr>
+      </div>
+    </div>
+    <div class="category" data-category="flights">
+      <h3><img src="/img/recommendations/icons/flight.png" alt="{{ site.data[lang].flight_icon_alt }}" class="category-icon"> {{ site.data[lang].recommendations_flights }}</h3>
+      <div class="recommendations-grid">
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_airline_a_name }}"
+             data-address="{{ site.data[lang].rec_airline_a_address }}"
+             data-description="{{ site.data[lang].rec_airline_a_description }}">
+          <img src="/img/recommendations/flight1.jpg" alt="{{ site.data[lang].rec_airline_a_name }}">
+        </div>
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_airline_b_name }}"
+             data-address="{{ site.data[lang].rec_airline_b_address }}"
+             data-description="{{ site.data[lang].rec_airline_b_description }}">
+          <img src="/img/recommendations/flight2.jpg" alt="{{ site.data[lang].rec_airline_b_name }}">
+        </div>
+      </div>
+    </div>
+
+    <div class="category" data-category="hotels">
+      <h3><img src="/img/recommendations/icons/hotel.png" alt="{{ site.data[lang].hotel_icon_alt }}" class="category-icon"> {{ site.data[lang].recommendations_hotels }}</h3>
+      <div class="recommendations-grid">
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_hotel_a_name }}"
+             data-address="{{ site.data[lang].rec_hotel_a_address }}"
+             data-description="{{ site.data[lang].rec_hotel_a_description }}">
+          <img src="/img/recommendations/hotel1.jpg" alt="{{ site.data[lang].rec_hotel_a_name }}">
+        </div>
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_hotel_b_name }}"
+             data-address="{{ site.data[lang].rec_hotel_b_address }}"
+             data-description="{{ site.data[lang].rec_hotel_b_description }}">
+          <img src="/img/recommendations/hotel2.jpg" alt="{{ site.data[lang].rec_hotel_b_name }}">
+        </div>
+      </div>
+    </div>
+
+    <div class="category" data-category="activities">
+      <h3><img src="/img/recommendations/icons/activity.png" alt="{{ site.data[lang].activity_icon_alt }}" class="category-icon"> {{ site.data[lang].recommendations_activities }}</h3>
+      <div class="recommendations-grid">
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_activity_a_name }}"
+             data-address="{{ site.data[lang].rec_activity_a_address }}"
+             data-description="{{ site.data[lang].rec_activity_a_description }}">
+          <img src="/img/recommendations/activity1.jpg" alt="{{ site.data[lang].rec_activity_a_name }}">
+        </div>
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_activity_b_name }}"
+             data-address="{{ site.data[lang].rec_activity_b_address }}"
+             data-description="{{ site.data[lang].rec_activity_b_description }}">
+          <img src="/img/recommendations/activity2.jpg" alt="{{ site.data[lang].rec_activity_b_name }}">
+        </div>
+      </div>
+    </div>
+
+    <div class="category" data-category="sights">
+      <h3><img src="/img/recommendations/icons/sight.png" alt="{{ site.data[lang].sight_icon_alt }}" class="category-icon"> {{ site.data[lang].recommendations_sights }}</h3>
+      <div class="recommendations-grid">
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_sight_a_name }}"
+             data-address="{{ site.data[lang].rec_sight_a_address }}"
+             data-description="{{ site.data[lang].rec_sight_a_description }}">
+          <img src="/img/recommendations/sight1.jpg" alt="{{ site.data[lang].rec_sight_a_name }}">
+        </div>
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_sight_b_name }}"
+             data-address="{{ site.data[lang].rec_sight_b_address }}"
+             data-description="{{ site.data[lang].rec_sight_b_description }}">
+          <img src="/img/recommendations/sight2.jpg" alt="{{ site.data[lang].rec_sight_b_name }}">
+        </div>
+      </div>
+      <div class="recommendations-grid">
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_sight_c_name }}"
+             data-address="{{ site.data[lang].rec_sight_c_address }}"
+             data-description="{{ site.data[lang].rec_sight_c_description }}">
+          <img src="/img/recommendations/sight2.jpg" alt="{{ site.data[lang].rec_sight_c_name }}">
+        </div>
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_sight_d_name }}"
+             data-address="{{ site.data[lang].rec_sight_d_address }}"
+             data-description="{{ site.data[lang].rec_sight_d_description }}">
+          <img src="/img/recommendations/sight1.jpg" alt="{{ site.data[lang].rec_sight_d_name }}">
+        </div>
+      </div>
+    </div>
+
+    <div class="category" data-category="restaurants">
+      <h3><img src="/img/recommendations/icons/restaurant.png" alt="{{ site.data[lang].restaurant_icon_alt }}" class="category-icon"> {{ site.data[lang].recommendations_restaurants }}</h3>
+      <div class="recommendations-grid">
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_restaurant_a_name }}"
+             data-address="{{ site.data[lang].rec_restaurant_a_address }}"
+             data-description="{{ site.data[lang].rec_restaurant_a_description }}">
+          <img src="/img/recommendations/restaurant1.jpg" alt="{{ site.data[lang].rec_restaurant_a_name }}">
+        </div>
+        <div class="recommendation"
+             data-name="{{ site.data[lang].rec_restaurant_b_name }}"
+             data-address="{{ site.data[lang].rec_restaurant_b_address }}"
+             data-description="{{ site.data[lang].rec_restaurant_b_description }}">
+          <img src="/img/recommendations/restaurant2.jpg" alt="{{ site.data[lang].rec_restaurant_b_name }}">
+        </div>
+      </div>
+  </div>
+</section>
+
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const recommendations = document.querySelectorAll('.recommendation');
-  
+
     recommendations.forEach(recommendation => {
       recommendation.addEventListener('click', function() {
         recommendation.classList.toggle('show-description');
       });
-  
+
       const info = document.createElement('div');
       info.classList.add('info');
       info.innerHTML = `
@@ -14,88 +127,11 @@
         <p>${recommendation.dataset.address}</p>
       `;
       recommendation.appendChild(info);
-  
+
       const description = document.createElement('div');
       description.classList.add('description');
       description.innerHTML = `<p>${recommendation.dataset.description}</p>`;
       recommendation.appendChild(description);
     });
   });
-  </script> 
-  
-  <section id="recommendations-{{ lang }}">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Recommendations</h2>
-          <hr>
-        </div>
-      </div>
-      <div class="category" data-category="flights">
-        <h3><img src="/img/recommendations/icons/flight.png" alt="Flight Icon" class="category-icon"> Flights</h3>
-        <div class="recommendations-grid">
-          <div class="recommendation" data-name="Airline A" data-address="123 Main St" data-description="Great deals and comfortable flights.">
-            <img src="/img/recommendations/flight1.jpg" alt="Airline A">
-          </div>
-          <div class="recommendation" data-name="Airline B" data-address="456 Oak Ave" data-description="Excellent service and direct routes.">
-            <img src="/img/recommendations/flight2.jpg" alt="Airline B">
-          </div>
-        </div>
-      </div>
-    
-      <div class="category" data-category="hotels">
-        <h3><img src="/img/recommendations/icons/hotel.png" alt="Hotel Icon" class="category-icon"> Hotels</h3>
-        <div class="recommendations-grid">
-          <div class="recommendation" data-name="Hotel Sunshine" data-address="789 Pine Ln" data-description="Beautiful beachfront hotel.">
-            <img src="/img/recommendations/hotel1.jpg" alt="Hotel Sunshine">
-          </div>
-          <div class="recommendation" data-name="Hotel Breeze" data-address="1011 Elm Rd" data-description="Cozy hotel with a pool.">
-            <img src="/img/recommendations/hotel2.jpg" alt="Hotel Breeze">
-          </div>
-        </div>
-      </div>
-    
-      <div class="category" data-category="activities">
-        <h3><img src="/img/recommendations/icons/activity.png" alt="Activity Icon" class="category-icon"> Activities</h3>
-        <div class="recommendations-grid">
-          <div class="recommendation" data-name="Snorkeling Tour" data-address="Ocean Pier" data-description="Explore the coral reefs!">
-            <img src="/img/recommendations/activity1.jpg" alt="Snorkeling Tour">
-          </div>
-          <div class="recommendation" data-name="Sunset Cruise" data-address="Marina Bay" data-description="Relaxing evening cruise.">
-            <img src="/img/recommendations/activity2.jpg" alt="Sunset Cruise">
-          </div>
-        </div>
-      </div>
-    
-      <div class="category" data-category="sights">
-        <h3><img src="/img/recommendations/icons/sight.png" alt="Sight Icon" class="category-icon"> Sights</h3>
-        <div class="recommendations-grid">
-          <div class="recommendation" data-name="Waterfall Park" data-address="Forest Road" data-description="Beautiful natural waterfalls.">
-            <img src="/img/recommendations/sight1.jpg" alt="Waterfall Park">
-          </div>
-          <div class="recommendation" data-name="Old Town" data-address="City Center" data-description="Historic district with charming streets.">
-            <img src="/img/recommendations/sight2.jpg" alt="Old Town">
-          </div>
-        </div>
-        <div class="recommendations-grid">
-          <div class="recommendation" data-name="Botanical Garden" data-address="Garden Lane" data-description="Exotic plants and flowers.">
-            <img src="/img/recommendations/sight2.jpg" alt="Botanical Garden">
-          </div>
-          <div class="recommendation" data-name="Mountain Viewpoint" data-address="Lookout Road" data-description="Panoramic views of the surrounding landscape.">
-            <img src="/img/recommendations/sight1.jpg" alt="Mountain Viewpoint">
-          </div>
-        </div>
-      </div>
-    
-      <div class="category" data-category="restaurants">
-        <h3><img src="/img/recommendations/icons/restaurant.png" alt="Restaurant Icon" class="category-icon"> Restaurants</h3>
-        <div class="recommendations-grid">
-          <div class="recommendation" data-name="Seafood Grill" data-address="Beachfront Ave" data-description="Fresh seafood with ocean views.">
-            <img src="/img/recommendations/restaurant1.jpg" alt="Seafood Grill">
-          </div>
-          <div class="recommendation" data-name="Italian Bistro" data-address="Downtown St" data-description="Authentic Italian cuisine.">
-            <img src="/img/recommendations/restaurant2.jpg" alt="Italian Bistro">
-          </div>
-        </div>
-    </div>
-  </section>
+</script>
