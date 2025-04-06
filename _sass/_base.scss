@@ -619,12 +619,6 @@ header {
   }
 }
 
-@media (max-width: 767px) {
-  #recommendations .recommendation {
-    width: 100%;
-  }
-}
-
 // Wedding Day Timetable
 .timetable-items {
   @extend .card-container;
@@ -680,7 +674,7 @@ header {
 }
 
 // Contact Section
-#contact {
+section[id^="contact-"] {
   text-align: center;
   
   .row {
@@ -710,7 +704,7 @@ header {
 }
 
 //RSVP 
-#rsvp {
+section[id^="rsvp-"] {
   .container {
     display: flex;
     flex-direction: column;
@@ -725,7 +719,7 @@ header {
 }
 
 // gifts
-#gifts {
+section[id^="gifts-"] {
   padding: 80px 0;
   background-color: #f8f9fa;
   
