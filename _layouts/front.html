@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
 
+<html lang="en">
 {% include head.html %}
 
 <body id="page-top">
+  <div id="login-mask">
+    <div class="login-container">
+      <div class="login-overlay">
+        <input type="text" id="start-code" placeholder="Enter 6-digit code" maxlength="6" />
+        <button id="start-btn">Start</button>
+      </div>
+    </div>
+  </div>
   {% include nav.html %}
   {% include header.html %}
   {% include history.html %}
@@ -17,4 +25,125 @@
   {% include scripts.html %}
 </body>
 
+
+<script>
+  // Developer reset: ?reset=true
+const params = new URLSearchParams(window.location.search);
+if (params.get('reset') === 'true') {
+  localStorage.removeItem('startCodeAccepted');
+  localStorage.removeItem('lang');
+  console.log("Login has been reset.");
+  // Optional: redirect to clean URL after reset
+  setTimeout(() => {
+    window.location.href = window.location.pathname;
+  }, 500);
+}
+
+  const codes = {
+    "123456": "de", // German
+    "654321": "en", // English
+    "112233": "es", // Spanish
+  };
+
+  const mask = document.getElementById('login-mask');
+  const input = document.getElementById('start-code');
+  const btn = document.getElementById('start-btn');
+
+  btn.addEventListener('click', () => {
+    const code = input.value.trim();
+    const lang = codes[code];
+
+    if (lang) {
+      // Optionally save this in localStorage
+      localStorage.setItem('startCodeAccepted', 'true');
+      localStorage.setItem('lang', lang);
+
+      // Hide login, show content
+      mask.classList.add('fade-out');
+      setTimeout(() => {
+        mask.style.display = 'none';
+      }, 1000); // matches animation duration
+
+      document.documentElement.lang = lang;
+      document.body.setAttribute('data-lang', lang);
+    } else {
+      alert("Invalid code. Please try again.");
+    }
+  });
+
+  // Optionally auto-unlock if already entered
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('startCodeAccepted') === 'true') {
+      mask.style.display = 'none';
+      document.documentElement.lang = localStorage.getItem('lang');
+    }
+  });
+</script>
+
 </html>
+
+
+<style>
+  #login-mask.fade-out {
+    animation: fadeOut 1s ease forwards;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  #login-mask {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: url('img/background.jpg') no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-container {
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+
+  .login-overlay {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  #start-code {
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    width: 200px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  #start-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #start-btn:hover {
+    background: #555;
+  }
+</style>
