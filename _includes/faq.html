@@ -1,52 +1,51 @@
-<section id="faq">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">FAQ</h2>
-          <hr>
-        </div>
+<!-- _includes/faq.html -->
+{% assign lang = include.lang | default: 'en' %}
+<section id="faq-{{ lang }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">{{ site.data[lang].faq_heading }}</h2>
+        <hr>
       </div>
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-          <div class="faq-accordion">
-            <!-- FAQ Item 1 -->
-            <div class="faq-item">
-              <div class="faq-header" data-toggle="collapse" data-target="#faq1">
-                <i class="fa fa-diamond"></i>
-                <h3>What about my baby/kids</h3>
-              </div>
-              <div id="faq1" class="collapse">
-                <div class="faq-body">
-                  <p class="text-muted">Don't worry</p>
-                </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <div class="faq-header" data-toggle="collapse" data-target="#faq1">
+              <i class="fa fa-diamond"></i>
+              <h3>{{ site.data[lang].faq_question_1 }}</h3>
+            </div>
+            <div id="faq1" class="collapse">
+              <div class="faq-body">
+                <p class="text-muted">{{ site.data[lang].faq_answer_1 }}</p>
               </div>
             </div>
-            <!-- FAQ Item 2 -->
-            <div class="faq-item">
-                <div class="faq-header" data-toggle="collapse" data-target="#faq1">
-                    <i class="fa fa-diamond"></i>
-                    <h3>is there enough food?</h3>
-                </div>
-                <div id="faq1" class="collapse">
-                    <div class="faq-body">
-                    <p class="text-muted">definitly!</p>
-                    </div>
-                </div>
-                </div>
-            <!-- FAQ Item 3 -->
-            <div class="faq-item">
-                <div class="faq-header" data-toggle="collapse" data-target="#faq1">
-                  <i class="fa fa-diamond"></i>
-                  <h3>Do they speak english?</h3>
-                </div>
-                <div id="faq1" class="collapse">
-                  <div class="faq-body">
-                    <p class="text-muted">Some of them</p>
-                  </div>
-                </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header" data-toggle="collapse" data-target="#faq2">
+              <i class="fa fa-diamond"></i>
+              <h3>{{ site.data[lang].faq_question_2 }}</h3>
+            </div>
+            <div id="faq2" class="collapse">
+              <div class="faq-body">
+                <p class="text-muted">{{ site.data[lang].faq_answer_2 }}</p>
               </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-header" data-toggle="collapse" data-target="#faq3">
+              <i class="fa fa-diamond"></i>
+              <h3>{{ site.data[lang].faq_question_3 }}</h3>
+            </div>
+            <div id="faq3" class="collapse">
+              <div class="faq-body">
+                <p class="text-muted">{{ site.data[lang].faq_answer_3 }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

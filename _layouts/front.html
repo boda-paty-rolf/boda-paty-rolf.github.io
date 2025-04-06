@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="{{ site.default_language | default: 'en' }}">
 {% include head.html %}
 
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+</head>
 <body id="page-top">
   <div id="login-mask">
     <div class="login-container">
@@ -12,76 +15,118 @@
       </div>
     </div>
   </div>
-  {% include nav.html %}
-  {% include header.html %}
-  {% include history.html %}
-  {% include weddingweek.html %}
-  {% include weddingday.html %}
-  {% include recommendations.html %}
-  {% include gifts.html %}
-  {% include faq.html %}
-  {% include rsvp.html %}
-  {% include contact.html %}
+  
+  <!-- Language-specific content containers -->
+<div id="content-en" class="language-content" style="display:none;">
+  {% include nav.html lang='en' %}
+  {% include header.html lang='en' %}
+  {% include history.html lang='en' %}
+  {% include weddingweek.html lang='en' %}
+  {% include weddingday.html lang='en' %}
+  {% include recommendations.html lang='en' %}
+  {% include gifts.html lang='en' %}
+  {% include faq.html lang='en' %}
+  {% include rsvp.html lang='en' %}
+  {% include contact.html lang='en' %}
+</div>
+
+<div id="content-de" class="language-content" style="display:none;">
+  {% include nav.html lang='de' %}
+  {% include header.html lang='de' %}
+  {% include history.html lang='de' %}
+  {% include weddingweek.html lang='de' %}
+  {% include weddingday.html lang='de' %}
+  {% include recommendations.html lang='de' %}
+  {% include gifts.html lang='de' %}
+  {% include faq.html lang='de' %}
+  {% include rsvp.html lang='de' %}
+  {% include contact.html lang='de' %}
+</div>
+
+<div id="content-es" class="language-content" style="display:none;">
+  {% include nav.html lang='es' %}
+  {% include header.html lang='es' %}
+  {% include history.html lang='es' %}
+  {% include weddingweek.html lang='es' %}
+  {% include weddingday.html lang='es' %}
+  {% include recommendations.html lang='es' %}
+  {% include gifts.html lang='es' %}
+  {% include faq.html lang='es' %}
+  {% include rsvp.html lang='es' %}
+  {% include contact.html lang='es' %}
+</div>
+  
   {% include scripts.html %}
-</body>
 
-
-<script>
-  // Developer reset: ?reset=true
-const params = new URLSearchParams(window.location.search);
-if (params.get('reset') === 'true') {
-  localStorage.removeItem('startCodeAccepted');
-  localStorage.removeItem('lang');
-  console.log("Login has been reset.");
-  // Optional: redirect to clean URL after reset
-  setTimeout(() => {
-    window.location.href = window.location.pathname;
-  }, 500);
-}
-
-  const codes = {
-    "123456": "de", // German
-    "654321": "en", // English
-    "112233": "es", // Spanish
-  };
-
-  const mask = document.getElementById('login-mask');
-  const input = document.getElementById('start-code');
-  const btn = document.getElementById('start-btn');
-
-  btn.addEventListener('click', () => {
-    const code = input.value.trim();
-    const lang = codes[code];
-
-    if (lang) {
-      // Optionally save this in localStorage
-      localStorage.setItem('startCodeAccepted', 'true');
-      localStorage.setItem('lang', lang);
-
-      // Hide login, show content
-      mask.classList.add('fade-out');
+  <script>
+    // Developer reset: ?reset=true
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('reset') === 'true') {
+      localStorage.removeItem('startCodeAccepted');
+      localStorage.removeItem('lang');
+      console.log("Login has been reset.");
       setTimeout(() => {
-        mask.style.display = 'none';
-      }, 1000); // matches animation duration
+        window.location.href = window.location.pathname;
+      }, 500);
+    }
 
+    const codes = {
+      "123456": "de", // German
+      "654321": "en", // English
+      "112233": "es", // Spanish
+    };
+
+    const mask = document.getElementById('login-mask');
+    const input = document.getElementById('start-code');
+    const btn = document.getElementById('start-btn');
+    
+    // Function to show the appropriate language content
+    function showLanguageContent(lang) {
+      // Hide all language content divs
+      document.querySelectorAll('.language-content').forEach(div => {
+        div.style.display = 'none';
+      });
+      
+      // Show the selected language content
+      const contentDiv = document.getElementById(`content-${lang}`);
+      if (contentDiv) {
+        contentDiv.style.display = 'block';
+      }
+      
+      // Set HTML and body attributes
       document.documentElement.lang = lang;
       document.body.setAttribute('data-lang', lang);
-    } else {
-      alert("Invalid code. Please try again.");
     }
-  });
 
-  // Optionally auto-unlock if already entered
-  window.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('startCodeAccepted') === 'true') {
-      mask.style.display = 'none';
-      document.documentElement.lang = localStorage.getItem('lang');
-    }
-  });
-</script>
+    btn.addEventListener('click', () => {
+      const code = input.value.trim();
+      const lang = codes[code];
 
+      if (lang) {
+        localStorage.setItem('startCodeAccepted', 'true');
+        localStorage.setItem('lang', lang);
+
+        mask.classList.add('fade-out');
+        setTimeout(() => {
+          mask.style.display = 'none';
+          showLanguageContent(lang);
+        }, 1000);
+      } else {
+        alert("Invalid code. Please try again.");
+      }
+    });
+
+    // On page load, check if the start code was accepted and hide the mask
+    document.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('startCodeAccepted') === 'true') {
+        mask.style.display = 'none';
+        const storedLang = localStorage.getItem('lang') || '{{ site.default_language | default: "en" }}';
+        showLanguageContent(storedLang);
+      }
+    });
+  </script>
+</body>
 </html>
-
 
 <style>
   #login-mask.fade-out {

@@ -1,0 +1,24 @@
+#navbar
+nav_home: "Inicio"
+nav_weddingweek: "Semana de la boda"
+nav_weddingday: "Dia de la boda"
+nav_recommendations: "Recomendaciones"
+nav_gifts: "Mesa de regalos"
+nav_faq: "Preguntas frequentes"
+nav_rsvp: "RSVP"
+nav_contact: "Contacto"
+
+# contact page
+contact_heading: "¿Todavía tiene preguntas?"
+contact_intro: "¡Pongámonos en contacto!"
+contact_email_text: "Escríbenos un correo electrónico"
+contact_whatsapp_text: "Escríbenos un Whatsapp"
+
+# faq
+faq_heading: "Preguntas Frecuentes"
+faq_question_1: "¿Qué pasa con mi bebé/mis hijos?"
+faq_answer_1: "No te preocupes, tendremos arreglos para el cuidado de niños durante los eventos principales. Por favor, indica tus necesidades en el formulario de confirmación de asistencia."
+faq_question_2: "¿Habrá suficiente comida?"
+faq_answer_2: "¡Definitivamente! Tendremos una variedad de deliciosas opciones disponibles para satisfacer todos los gustos."
+faq_question_3: "¿Hablan inglés?"
+faq_answer_3: "Sí, muchos de nuestros invitados y proveedores hablan inglés. Aseguraremos una comunicación clara durante todo el evento."

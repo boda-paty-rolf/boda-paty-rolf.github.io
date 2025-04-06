@@ -1,0 +1,24 @@
+#navbar
+nav_home: "Startseite"
+nav_weddingweek: "Hochzeitswoche"
+nav_weddingday: "Hochzeitstag"
+nav_recommendations: "Empfehlungen"
+nav_gifts: "Geschenke"
+nav_faq: "Häufige Fragen"
+nav_rsvp: "RSVP"
+nav_contact: "Kontakt"
+
+# contact page
+contact_heading: "Hast du noch Fragen?"
+contact_intro: "Lass uns in Kontakt treten!"
+contact_email_text: "Schreib uns eine E-Mail"
+contact_whatsapp_text: "Schreib uns eine WhatsApp-Nachricht"
+
+# faq
+faq_heading: "FAQ"
+faq_question_1: "Was ist mit meinem Baby/meinen Kindern?"
+faq_answer_1: "Keine Sorge, wir werden während der Hauptveranstaltungen Kinderbetreuung organisieren. Bitte geben Sie Ihren Bedarf im RSVP-Formular an."
+faq_question_2: "Gibt es genug Essen?"
+faq_answer_2: "Auf jeden Fall! Wir werden eine Vielzahl köstlicher Optionen anbieten, um jeden Geschmack zu treffen."
+faq_question_3: "Sprechen sie Englisch?"
+faq_answer_3: "Ja, viele unserer Gäste und Dienstleister sprechen Englisch. Wir werden eine klare Kommunikation während der gesamten Veranstaltung sicherstellen."

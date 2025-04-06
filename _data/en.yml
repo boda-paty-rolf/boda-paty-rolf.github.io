@@ -1,0 +1,24 @@
+#navbar
+nav_home: "Home"
+nav_weddingweek: "Wedding Week"
+nav_weddingday: "Wedding Day"
+nav_recommendations: "Recommendations"
+nav_gifts: "Gifts"
+nav_faq: "FAQ"
+nav_rsvp: "RSVP"
+nav_contact: "Contact"
+
+# contact page
+contact_heading: "Still have questions?"
+contact_intro: "Let's get in touch!"
+contact_email_text: "Send us an email"
+contact_whatsapp_text: "Send us a WhatsApp message"
+
+# faq
+faq_heading: "FAQ"
+faq_question_1: "What about my baby/kids?"
+faq_answer_1: "Don't worry, we will have arrangements for childcare during the main events. Please indicate your needs in the RSVP form."
+faq_question_2: "Is there enough food?"
+faq_answer_2: "Definitely! We will have a variety of delicious options available to cater to everyone's tastes."
+faq_question_3: "Do they speak English?"
+faq_answer_3: "Yes, many of our guests and vendors speak English. We will ensure clear communication throughout the event."

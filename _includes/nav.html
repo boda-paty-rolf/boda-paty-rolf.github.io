@@ -1,3 +1,5 @@
+<!-- _includes/nav.html -->
+{% assign lang = include.lang | default: 'en' %}
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -10,33 +12,32 @@
             </button>
             <a class="navbar-brand page-scroll" href="#page-top">Boda Paty & Rolf</a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" href="#page-top">Home</a>
+                    <a class="page-scroll" href="#page-top">{{ site.data[lang].nav_home }}</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#weddingweek">Semana de la boda</a>
+                    <a class="page-scroll" href="#weddingweek-{{ lang }}">{{ site.data[lang].nav_weddingweek }}</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#weddingday">Dia de la boda</a>
+                    <a class="page-scroll" href="#weddingday-{{ lang }}">{{ site.data[lang].nav_weddingday }}</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#recommendations">Recomendaciones</a>
+                    <a class="page-scroll" href="#recommendations-{{ lang }}">{{ site.data[lang].nav_recommendations }}</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#gifts">Mesa de regalos</a>
+                    <a class="page-scroll" href="#gifts-{{ lang }}">{{ site.data[lang].nav_gifts }}</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#faq">Preguntas frequentes</a>
+                    <a class="page-scroll" href="#faq-{{ lang }}">{{ site.data[lang].nav_faq }}</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#rsvp">RSVP</a>
+                    <a class="page-scroll" href="#rsvp-{{ lang }}">{{ site.data[lang].nav_rsvp }}</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">Contacto</a>
+                    <a class="page-scroll" href="#contact-{{ lang }}">{{ site.data[lang].nav_contact }}</a>
                 </li>
             </ul>
         </div>

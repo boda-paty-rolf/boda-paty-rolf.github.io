@@ -537,7 +537,7 @@ header {
 }
 
 // Recommendations
-#recommendations {
+[id^="recommendations"] {
   .category {
     margin-bottom: 40px;
     
