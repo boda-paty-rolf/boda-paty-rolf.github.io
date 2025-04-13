@@ -2,21 +2,22 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Wedding Week Events</h2>
+          <h2 class="section-heading"> {{ site.data[lang].week_heading }} </h2>
           <hr>
-          <p class="text-muted">Celebrate with us throughout the week</p>
+          <p class="text-muted"> {{ site.data[lang].week_subtitle }} </p>
         </div>
       </div>
       
       <div class="row">
         <div class="col-lg-10 col-lg-offset-1">
           <div class="wedding-timeline">
+
             <!-- Event 1 -->
             <div class="timeline-item row">
               <div class="col-md-6 text-right">
                 <div class="timeline-date">
-                  <h4>Monday</h4>
-                  <p class="text-primary">June 12th</p>
+                  <h4>{{ site.data[lang].week_dayname1 }}</h4>
+                  <p class="text-primary">22.05.2026</p>
                 </div>
               </div>
               <div class="col-md-6">
@@ -24,10 +25,10 @@
                   <div class="timeline-icon">
                     <i class="fa fa-glass-cheers"></i>
                   </div>
-                  <h3>Welcome Dinner</h3>
-                  <p class="time"><i class="fa fa-clock-o"></i> 7:00 PM - 10:00 PM</p>
-                  <p class="location"><i class="fa fa-map-marker"></i> Beachside Resort</p>
-                  <p class="text-muted">Casual gathering for all guests</p>
+                  <h3> {{ site.data[lang].week_event1_title }} </h3>
+                  <p class="time"><i class="fa fa-clock-o"></i> 7:00 - 10:00 </p>
+                  <p class="location"><i class="fa fa-map-marker"></i> {{ site.data[lang].week_event1_location }} </p>
+                  <p class="text-muted">{{ site.data[lang].week_event1_description }} </p>
                 </div>
               </div>
             </div>
@@ -38,8 +39,8 @@
                 <div class="timeline-item row">
                   <div class="col-md-6 text-right">
                     <div class="timeline-date">
-                      <h4>Tuesday</h4>
-                      <p class="text-primary">June 12th</p>
+                      <h4>{{ site.data[lang].week_dayname2 }}</h4>
+                      <p class="text-primary">23.05.2026</p>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -47,10 +48,10 @@
                       <div class="timeline-icon">
                         <i class="fa fa-glass-cheers"></i>
                       </div>
-                      <h3>Saufi mit Mausi</h3>
-                      <p class="time"><i class="fa fa-clock-o"></i> 7:00 PM - 10:00 PM</p>
-                      <p class="location"><i class="fa fa-map-marker"></i> Beachside Resort</p>
-                      <p class="text-muted">Ich vermisse meine Mausi!</p>
+                      <h3> {{ site.data[lang].week_event2_title }} </h3>
+                      <p class="time"><i class="fa fa-clock-o"></i> 7:00 - 10:00 </p>
+                      <p class="location"><i class="fa fa-map-marker"></i> {{ site.data[lang].week_event2_location }} </p>
+                      <p class="text-muted">{{ site.data[lang].week_event2_description }} </p>
                     </div>
                   </div>
                 </div>
@@ -61,8 +62,8 @@
                     <div class="timeline-item row">
                       <div class="col-md-6 text-right">
                         <div class="timeline-date">
-                          <h4>Tuesday</h4>
-                          <p class="text-primary">June 12th</p>
+                          <h4>{{ site.data[lang].week_dayname3 }}</h4>
+                          <p class="text-primary">24.05.2026</p>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -70,10 +71,10 @@
                           <div class="timeline-icon">
                             <i class="fa fa-glass-cheers"></i>
                           </div>
-                          <h3>asdfa</h3>
-                          <p class="time"><i class="fa fa-clock-o"></i> 7:00 PM - 10:00 PM</p>
-                          <p class="location"><i class="fa fa-map-marker"></i> asdft</p>
-                          <p class="text-muted">asdf</p>
+                          <h3> {{ site.data[lang].week_event3_title }} </h3>
+                          <p class="time"><i class="fa fa-clock-o"></i> 7:00 - 10:00 </p>
+                          <p class="location"><i class="fa fa-map-marker"></i> {{ site.data[lang].week_event3_location }} </p>
+                          <p class="text-muted">{{ site.data[lang].week_event3_description }} </p>
                         </div>
                       </div>
                     </div>

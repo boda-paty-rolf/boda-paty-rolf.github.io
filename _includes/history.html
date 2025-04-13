@@ -2,9 +2,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Nuestra historia</h2>
+          <h2 class="section-heading"> {{ site.data[lang].history_heading }} </h2>
           <hr>
-          <p class="text-muted">Cómo nos encontramos</p>
+          <p class="text-muted"> {{ site.data[lang].history_subtitle }} </p>
         </div>
       </div>
   
@@ -14,54 +14,30 @@
             <div class="story-heart"><i class="fa fa-heart"></i></div>
             
             <div class="story-content">
-              <p class="lead text-center">En medio de la pandemia, Paty empacó sus maletas. "¡Mamá, Papá, me voy a hacer una maestría a Austria!"</p>
+              <p class="lead text-center">{{ site.data[lang].history_starttext }}</p>
               
               <div class="story-image-wrapper">
                 <img src="/img/history/1.jpg" alt="Paty goes" class="img-responsive story-image">
-                <div class="image-caption">Paty starts a journey</div>
+                <div class="image-caption">{{ site.data[lang].history_picture1 }}</div>
               </div>
-              <h3 class="story-chapter">En un lugar lejano llamado Rosenheim</h3>
-              <p>Mientras tanto, Rolf, quien ya hacía home office antes de que empezara la pandemia... "¡Qué bien! Ahora todos tienen más tiempo libre y voy a poder jugar más volleyball."</p>
-              <div class="row timeline-moments">
-                <div class="col-md-4 moment-item">
-                    <div class="moment-date">Febrero 2020</div>
-                    <div class="moment-title">En México, se hacen patentes los primeros efectos de la inminente pandemia</div>
-                </div>
-                <div class="col-md-4 moment-item">
-                    <div class="moment-date">Marzo 2020</div>
-                    <div class="moment-title">Se han cerrado casi todos los comercios, empresas y escuelas de Alemania para contener el coronavirus</div>
-                    <p class="text-muted">How does it look do we need it?</p>
-                </div>
-                <div class="col-md-4 moment-item">
-                    <div class="moment-date">Augusto 2020</div>
-                    <div class="moment-title">Paty se va a Austria</div>
-                </div>
-            </div>
-            <h3 class="story-chapter">La primera cita</h3>
-            <p>Después de buscar mil maneras para verse a pesar del cierre de fronteras entre Alemania y Austria, encontramos que Hechtsee era el mejor lugar. Un lago que queda justo en la frontera. Ahí nos íbamos a platicar, caminar y dar vueltas..</p>
+              <h3 class="story-chapter">{{ site.data[lang].history_chapter1 }}</h3>
+              <p>{{ site.data[lang].history_text1 }}</p>
+
+            <h3 class="story-chapter">{{ site.data[lang].history_chapter2 }}</h3>
+            <p> {{ site.data[lang].history_text2 }}</p>
   
             <div class="text-center">
                 <img src="/img/history/lake.jpg" alt="The first date" class="img-responsive story-image">
+                <div class="image-caption">{{ site.data[lang].history_picture2 }}</div>
             </div>
   
             <p>
-                ¿Él? Técnico, calculador, específico, alemán.
-                ¿Yo? Creativa, soñadora y muy habladora... mexicana.
-                
-                Y aunque dicen que los opuestos se atraen, ellos descubrieron que lo más importante es lo que una pareja comprarte: la vida diaria, los sueños compartidos y los valores personales.
-                
-                Rolf le da a Paty paz, seguridad, cariño y mucha felicidad.
-                Paty le da a Rolf color, emociones, luz y también un poco de necesaria locura.
-                
-                Después de cinco años, no pueden esperar para dar los siguientes pasos: casarse, formar su propia familia y emprender nuevas aventuras juntos. Pero no pudiéran imaginarse haciendo eso sin sus seres queridos.
-                
-                Por eso, quisieran invitarte cordialmente a su boda, que para ellos es la unión de dos mundos. Un momento para crear puentes intercontinentales y hacerles saber a todos que tienen familia del otro lado del mar.
-                
-                Esperamos puedas acompañarnos. ¡Nos encantaría contar con tu presencia!</p>
+              {{ site.data[lang].history_text3 }}
+            </p>
   
                 <blockquote class="story-quote">
-                    "{{ site.romantic_quote }}" 
-                    <footer>- [Partner1] to [Partner2], [Date]</footer>
+                    " {{ site.data[lang].history_quote }} " 
+                    <footer> {{ site.data[lang].history_quote_footer }} </footer>
                 </blockquote>
             </div>
           </div>
